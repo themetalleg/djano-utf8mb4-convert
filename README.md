@@ -23,6 +23,7 @@ Running `./convert.sh` script without arguments shows help text:
 
 ```
   convert.sh <database_name> [connection parameters ...]
+./convert.sh [database name] -u [database user] -p[database password]
 
 All given parameters are directly given to the mysql command and our convert query is piped to this command.
 
@@ -42,6 +43,12 @@ Example:
 The script shows the generated convert query first. This way you can just copy/paste the query and run it manually
 yourself (instead of letting the script to run the query). Also asks for confirmation twice before actually messing with
 your data.
+
+add this to the setting.py database options:
+
+```python
+SET character_set_connection=utf8mb4; SET collation_connection=utf8mb4_unicode_ci;
+```
 
 ## License
 
